@@ -9,5 +9,5 @@ if [ X"${SERVICE}" = X"" ]; then
     exit 1
 fi
 
-redis-cli --user default --pass defaultpasswd acl deluser "${SERVICE}"
-redis-cli --user default --pass defaultpasswd acl save
+redis-cli --no-auth-warning --user default --pass defaultpasswd acl deluser "${SERVICE}"
+redis-cli --no-auth-warning --user default --pass defaultpasswd acl save
