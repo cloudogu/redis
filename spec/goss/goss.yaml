@@ -2,12 +2,30 @@ file:
   /startup.sh:
     exists: true
     filetype: file
+  /create-sa.sh:
+    exists: true
+    filetype: file
+  /remove-sa.sh:
+    exists: true
+    filetype: file
+  /pre-upgrade.sh:
+    exists: true
+    filetype: file
+  /post-upgrade.sh:
+    exists: true
+    filetype: file
+  /util.sh:
+    exists: true
+    filetype: file
+  /usr/local/etc/redis/redis.conf:
+    exists: true
+    filetype: file
+  /usr/local/etc/redis/service-accounts.acl:
+    exists: true
+    filetype: file
 package:
   redis:
     installed: true
 port:
   tcp:6379:
     listening: true
-service:
-  redis:
-    state: running
