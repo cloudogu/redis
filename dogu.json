@@ -1,0 +1,70 @@
+{
+  "Name": "testing/redis",
+  "Version": "6.2.6-1",
+  "DisplayName": "Redis",
+  "Description": "Fast in-memory database",
+  "Category": "Development Apps",
+  "Tags": [],
+  "Logo": "https://redis.io/images/redis-small.png",
+  "Url": "https://www.redis.io/",
+  "Image": "registry.cloudogu.com/testing/redis",
+  "Dependencies": [
+    {
+      "type": "dogu",
+      "name": "nginx"
+    }
+  ],
+  "HealthChecks": [
+    {
+      "Type": "tcp",
+      "Port": 6379
+    },
+    {
+      "Type": "state"
+    }
+  ],
+  "Configuration": [
+    {
+      "Name": "container_config/memory_limit",
+      "Description": "Limits the container's memory usage. Use a positive integer value followed by one of these units [b,k,m,g] (byte, kibibyte, mebibyte, gibibyte).",
+      "Optional": true,
+      "Validation": {
+        "Type": "BINARY_MEASUREMENT"
+      }
+    },
+    {
+      "Name": "container_config/swap_limit",
+      "Description": "Limits the container's swap memory usage. Use zero or a positive integer value followed by one of these units [b,k,m,g] (byte, kibibyte, mebibyte, gibibyte). 0 will disable swapping.",
+      "Optional": true,
+      "Validation": {
+        "Type": "BINARY_MEASUREMENT"
+      }
+    },
+    {
+      "Name": "logging/root",
+      "Description": "Set the root log level to one of ERROR, WARN, INFO, DEBUG.",
+      "Optional": true,
+      "Default": "WARN",
+      "Validation": {
+        "Type": "ONE_OF",
+        "Values": [
+          "INFO",
+          "DEBUG",
+          "WARN",
+          "ERROR",
+          "FATAL"
+        ]
+      }
+    }
+  ],
+  "ExposedCommands": [
+    {
+      "Name": "pre-upgrade",
+      "Command": "/pre-upgrade.sh"
+    },
+    {
+      "Name": "post-upgrade",
+      "Command": "/post-upgrade.sh"
+    }
+  ]
+}
