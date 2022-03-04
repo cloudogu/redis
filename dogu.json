@@ -23,6 +23,26 @@
       "Type": "state"
     }
   ],
+  "ExposedCommands": [
+    {
+      "Name": "service-account-create",
+      "Description": "Creates a new service account",
+      "Command": "/create-sa.sh"
+    },
+    {
+      "Name": "service-account-remove",
+      "Description": "Removes a service account",
+      "Command": "/remove-sa.sh"
+    },
+    {
+      "Name": "pre-upgrade",
+      "Command": "/pre-upgrade.sh"
+    },
+    {
+      "Name": "post-upgrade",
+      "Command": "/post-upgrade.sh"
+    }
+  ],
   "Configuration": [
     {
       "Name": "container_config/memory_limit",
@@ -55,16 +75,6 @@
           "FATAL"
         ]
       }
-    }
-  ],
-  "ExposedCommands": [
-    {
-      "Name": "pre-upgrade",
-      "Command": "/pre-upgrade.sh"
-    },
-    {
-      "Name": "post-upgrade",
-      "Command": "/post-upgrade.sh"
     }
   ]
 }

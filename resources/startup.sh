@@ -22,5 +22,5 @@ source "${STARTUP_DIR}"/util.sh
 doguctl state "ready"
 
 setDoguLogLevel
-
-redis-server /usr/share/redis/redis.conf
+ls -al "${CONF_DIR}/"
+redis-server "${CONF_DIR}/redis.conf"

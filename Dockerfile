@@ -6,6 +6,7 @@ LABEL NAME="testing/redis" \
 
 # set environment variables
 ENV SERVICE_TAGS=webapp \
+    CONF_DIR=/usr/local/etc/redis \
     USER=redis \
     USER_ID=1000 \
     STARTUP_DIR=/

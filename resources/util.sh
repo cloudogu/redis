@@ -21,5 +21,5 @@ function setDoguLogLevel() {
       export REDIS_LOGLEVEL=warning
     ;;
   esac
-  doguctl template "/usr/share/redis/redis.conf.tpl" "/usr/share/redis/redis.conf"
+  doguctl template "${CONF_DIR}/redis.conf.tpl" "${CONF_DIR}/redis.conf"
 }
