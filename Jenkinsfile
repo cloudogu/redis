@@ -52,12 +52,6 @@ node('vagrant') {
                 ecoSystem.loginBackend('cesmarvin-setup')
             }
 
-            stage('Wait for dependencies') {
-                timeout(15) {
-                    ecoSystem.waitForDogu("cas")
-                }
-            }
-
             stage('Build') {
                 ecoSystem.build("/dogu")
             }
