@@ -25,7 +25,7 @@ teardown() {
    mock_set_status "${doguctl}" 0
    mock_set_output "${doguctl}" "INFO" 1
 
-  run setDoguLogLevel
+  run getDoguLogLevel
 
   assert_success
   assert_line "notice"
@@ -37,7 +37,7 @@ teardown() {
    mock_set_status "${doguctl}" 0
    mock_set_output "${doguctl}" "DEBUG" 1
 
-  run setDoguLogLevel
+  run getDoguLogLevel
 
   assert_success
   assert_line "debug"
@@ -49,7 +49,7 @@ teardown() {
    mock_set_status "${doguctl}" 0
    mock_set_output "${doguctl}" "ERROR" 1
 
-  run setDoguLogLevel
+  run getDoguLogLevel
 
   assert_success
   assert_line "warning"
@@ -61,7 +61,7 @@ teardown() {
    mock_set_status "${doguctl}" 0
    mock_set_output "${doguctl}" "FATAL" 1
 
-  run setDoguLogLevel
+  run getDoguLogLevel
 
   assert_success
   assert_line "warning"
@@ -73,7 +73,7 @@ teardown() {
    mock_set_status "${doguctl}" 0
    mock_set_output "${doguctl}" "WARN" 1
 
-  run setDoguLogLevel
+  run getDoguLogLevel
 
   assert_success
   assert_line "warning"
@@ -85,7 +85,7 @@ teardown() {
    mock_set_status "${doguctl}" 0
    mock_set_output "${doguctl}" "" 1
 
-  run setDoguLogLevel
+  run getDoguLogLevel
 
   assert_success
   assert_line "warning"
