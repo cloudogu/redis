@@ -8,12 +8,6 @@
   "Logo": "https://redis.io/images/redis-small.png",
   "Url": "https://www.redis.io/",
   "Image": "registry.cloudogu.com/testing/redis",
-  "Dependencies": [
-    {
-      "type": "dogu",
-      "name": "nginx"
-    }
-  ],
   "HealthChecks": [
     {
       "Type": "tcp",

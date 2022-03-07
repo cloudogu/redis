@@ -22,8 +22,6 @@ node('vagrant') {
                 parameters([
                         booleanParam(defaultValue: false, description: 'Test dogu upgrade from latest release or optionally from defined version below', name: 'TestDoguUpgrade'),
                         string(defaultValue: '', description: 'Old Dogu version for the upgrade test (optional; e.g. 3.23.0-1)', name: 'OldDoguVersionForUpgradeTest'),
-                        booleanParam(defaultValue: true, description: 'Enables cypress to record video of the integration tests.', name: 'EnableVideoRecording'),
-                        booleanParam(defaultValue: true, description: 'Enables cypress to take screenshots of failing integration tests.', name: 'EnableScreenshotRecording')
                 ])
         ])
 
@@ -78,11 +76,6 @@ node('vagrant') {
 
                     // Wait for upgraded dogu to get healthy
                     ecoSystem.waitForDogu(doguName)
-                }
-
-                stage('Integration Tests - After Upgrade') {
-//                    ecoSystem.runCypressIntegrationTests([enableVideo      : params.EnableVideoRecording,
-//                                                          enableScreenshots: params.EnableScreenshotRecording])
                 }
             }
 
