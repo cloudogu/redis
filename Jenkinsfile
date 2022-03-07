@@ -36,14 +36,12 @@ node('vagrant') {
         stage('Lint') {
             lintDockerfile()
             shellCheck("./resources/startup.sh")
-            shellCheck("./resources/post-upgrade.sh")
-            shellCheck("./resources/pre-upgrade.sh")
             shellCheck("./resources/util.sh")
         }
 
         try {
             stage('Shell tests') {
-//                executeShellTests()
+                executeShellTests()
             }
 
             stage('Provision') {

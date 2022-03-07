@@ -3,23 +3,27 @@
 function setDoguLogLevel() {
   echo "Mapping dogu specific log level..."
   currentLogLevel=$(doguctl config --default "WARN" "logging/root")
+  local log_level
+  log_level=warning
 
   case "${currentLogLevel}" in
     "INFO")
-      export REDIS_LOGLEVEL=notice
+      log_level=notice
     ;;
     "DEBUG")
-      export REDIS_LOGLEVEL=debug
+      log_level=debug
     ;;
     "ERROR")
-      export REDIS_LOGLEVEL=warning
+      log_level=warning
     ;;
     "FATAL")
-      export REDIS_LOGLEVEL=warning
-    ;;
-    *)
-      export REDIS_LOGLEVEL=warning
+      log_level=warning
     ;;
   esac
+
+  echo "${log_level}"
+}
+
+function render_configuration() {
   doguctl template "${CONF_DIR}/redis.conf.tpl" "${CONF_DIR}/redis.conf"
 }

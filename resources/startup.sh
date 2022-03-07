@@ -19,8 +19,11 @@ echo "                       'V/(/////////////////////////////V'      "
 # shellcheck disable=SC1091
 source "${STARTUP_DIR}"/util.sh
 
+REDIS_LOGLEVEL=getDoguLogLevel
+export REDIS_LOGLEVEL
+
+render_configuration
+
 doguctl state "ready"
 
-setDoguLogLevel
-ls -al "${CONF_DIR}/"
 redis-server "${CONF_DIR}/redis.conf"
