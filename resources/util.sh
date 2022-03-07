@@ -1,7 +1,6 @@
 #!/bin/bash
 
 function getDoguLogLevel() {
-  echo "Mapping dogu specific log level..."
   currentLogLevel=$(doguctl config --default "WARN" "logging/root")
   local log_level
   log_level=warning

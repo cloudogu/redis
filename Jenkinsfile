@@ -48,6 +48,7 @@ node('vagrant') {
 
             stage('Setup') {
                 ecoSystem.loginBackend('cesmarvin-setup')
+                ecoSystem.setup()
             }
 
             stage('Build') {

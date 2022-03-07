@@ -19,7 +19,7 @@ echo "                       'V/(/////////////////////////////V'      "
 # shellcheck disable=SC1091
 source "${STARTUP_DIR}"/util.sh
 
-REDIS_LOGLEVEL=getDoguLogLevel
+REDIS_LOGLEVEL="$(getDoguLogLevel)"
 export REDIS_LOGLEVEL
 
 render_configuration

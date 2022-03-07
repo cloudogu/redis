@@ -8,12 +8,6 @@ file:
   /remove-sa.sh:
     exists: true
     filetype: file
-  /pre-upgrade.sh:
-    exists: true
-    filetype: file
-  /post-upgrade.sh:
-    exists: true
-    filetype: file
   /util.sh:
     exists: true
     filetype: file
