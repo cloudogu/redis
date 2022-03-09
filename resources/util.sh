@@ -1,4 +1,7 @@
 #!/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
 
 function getDoguLogLevel() {
   currentLogLevel=$(doguctl config --default "WARN" "logging/root")
@@ -23,6 +26,17 @@ function getDoguLogLevel() {
   echo "${log_level}"
 }
 
+function render_default_user_config() {
+  # only render service accounts file if it does not already exists
+  if [[ -f "${CONF_DIR}/data/service-accounts.acl" ]]; then
+    return
+  fi
+  local default_password
+  default_password=$(doguctl random -l 12)
+  doguctl config -e 'sa-self/password' "${default_password}"
+  doguctl template "/service-accounts.acl.tpl" "${CONF_DIR}/data/service-accounts.acl"
+}
+
 function render_configuration() {
-  doguctl template "${CONF_DIR}/redis.conf.tpl" "${CONF_DIR}/redis.conf"
+  doguctl template "/redis.conf.tpl" "${CONF_DIR}/redis.conf"
 }

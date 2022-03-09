@@ -1,0 +1,1 @@
+user default +@all ~* on >{{ .Config.GetAndDecrypt "sa-self/password" }}

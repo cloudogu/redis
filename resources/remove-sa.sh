@@ -9,5 +9,7 @@ if [ X"${SERVICE}" = X"" ]; then
     exit 1
 fi
 
-redis-cli --no-auth-warning --user default --pass defaultpasswd acl deluser "${SERVICE}"
-redis-cli --no-auth-warning --user default --pass defaultpasswd acl save
+default_password="$(doguctl config -e "sa-self/password")"
+
+redis-cli --no-auth-warning --user default --pass "${default_password}" acl deluser "${SERVICE}"
+redis-cli --no-auth-warning --user default --pass "${default_password}" acl save

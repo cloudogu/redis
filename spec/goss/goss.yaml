@@ -14,7 +14,7 @@ file:
   /usr/local/etc/redis/redis.conf:
     exists: true
     filetype: file
-  /usr/local/etc/redis/service-accounts.acl:
+  /usr/local/etc/redis/data/service-accounts.acl:
     exists: true
     filetype: file
 package:

@@ -17,6 +17,15 @@
       "Type": "state"
     }
   ],
+  "Volumes": [
+    {
+      "Name": "data",
+      "Path": "/usr/local/etc/redis/data",
+      "Owner": "1000",
+      "Group": "1000",
+      "NeedsBackup": true
+    }
+  ],
   "ExposedCommands": [
     {
       "Name": "service-account-create",
@@ -27,6 +36,14 @@
       "Name": "service-account-remove",
       "Description": "Removes a service account",
       "Command": "/remove-sa.sh"
+    },
+    {
+      "Name": "pre-upgrade",
+      "Command": "/pre-upgrade.sh"
+    },
+    {
+      "Name": "post-upgrade",
+      "Command": "/post-upgrade.sh"
     }
   ],
   "Configuration": [

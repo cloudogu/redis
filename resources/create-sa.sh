@@ -1,4 +1,7 @@
-#!/bin/bash -e
+#!/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
 
 SERVICE="$1"
 if [[ X"${SERVICE}" == X"" ]]; then
@@ -9,8 +12,10 @@ fi
 {
     PASSWORD=$(doguctl random)
 
-    redis-cli --no-auth-warning --user default --pass defaultpasswd acl setuser "${SERVICE}" on +@all ~* \&* \>"${PASSWORD}"
-    redis-cli --no-auth-warning --user default --pass defaultpasswd acl save
+    default_password="$(doguctl config -e "sa-self/password")"
+
+    redis-cli --no-auth-warning --user default --pass "${default_password}" acl setuser "${SERVICE}" on +@all ~* \&* \>"${PASSWORD}"
+    redis-cli --no-auth-warning --user default --pass "${default_password}" acl save
 } >/dev/null 2>&1
 
 # print details
