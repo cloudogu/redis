@@ -1,1 +1,1 @@
-user default +@all ~* on >{{ .Config.GetAndDecrypt "sa-self/password" }}
+user default +@all ~* on >{{ .Config.GetAndDecrypt "default-admin-password" }}

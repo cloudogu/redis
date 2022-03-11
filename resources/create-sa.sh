@@ -12,7 +12,7 @@ fi
 {
     PASSWORD=$(doguctl random)
 
-    default_password="$(doguctl config -e "sa-self/password")"
+    default_password="$(doguctl config -e "default-admin-password")"
 
     redis-cli --no-auth-warning --user default --pass "${default_password}" acl setuser "${SERVICE}" on +@all ~* \&* \>"${PASSWORD}"
     redis-cli --no-auth-warning --user default --pass "${default_password}" acl save
