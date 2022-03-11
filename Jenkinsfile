@@ -5,7 +5,7 @@ import com.cloudogu.ces.dogubuildlib.*
 
 node('vagrant') {
     String doguName = "redis"
-    String namespace = "testing"
+    String namespace = "official"
     Git git = new Git(this, "cesmarvin")
     git.committerName = 'cesmarvin'
     git.committerEmail = 'cesmarvin@cloudogu.com'

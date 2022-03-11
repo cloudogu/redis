@@ -1,5 +1,5 @@
 {
-  "Name": "testing/redis",
+  "Name": "official/redis",
   "Version": "6.2.6-1",
   "DisplayName": "Redis",
   "Description": "Fast in-memory database",
@@ -7,7 +7,7 @@
   "Tags": [],
   "Logo": "https://redis.io/images/redis-small.png",
   "Url": "https://www.redis.io/",
-  "Image": "registry.cloudogu.com/testing/redis",
+  "Image": "registry.cloudogu.com/official/redis",
   "HealthChecks": [
     {
       "Type": "tcp",
