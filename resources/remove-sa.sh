@@ -9,7 +9,7 @@ if [ X"${SERVICE}" = X"" ]; then
     exit 1
 fi
 
-default_password="$(doguctl config -e "default-admin-password")"
+default_password="$(doguctl config -e "default_admin_password")"
 
 redis-cli --no-auth-warning --user default --pass "${default_password}" acl deluser "${SERVICE}"
 redis-cli --no-auth-warning --user default --pass "${default_password}" acl save

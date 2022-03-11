@@ -33,7 +33,7 @@ function render_default_user_config() {
   fi
   local default_password
   default_password=$(doguctl random -l 12)
-  doguctl config -e 'default-admin-password' "${default_password}"
+  doguctl config -e 'default_admin_password' "${default_password}"
   doguctl template "/service-accounts.acl.tpl" "${CONF_DIR}/data/service-accounts.acl"
 }
 
