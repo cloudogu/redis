@@ -1,7 +1,7 @@
-FROM registry.cloudogu.com/official/base:3.15.0-1
+FROM registry.cloudogu.com/official/base:3.15.3-1
 
 LABEL NAME="official/redis" \
-   VERSION="6.2.6-1" \
+   VERSION="6.2.6-2" \
    maintainer="info@cloudogu.com"
 
 # set environment variables
@@ -11,8 +11,12 @@ ENV SERVICE_TAGS=webapp \
     USER_ID=1000 \
     STARTUP_DIR=/
 
-RUN set -eux -o pipefail \
-    && apk add redis bash
+RUN set -o errexit \
+ && set -o nounset \
+ && set -o pipefail \
+ && apk update \
+ && apk upgrade \
+ && apk add redis bash
 
 # copy resources files
 COPY resources/ /
