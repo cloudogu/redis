@@ -1,7 +1,7 @@
 FROM registry.cloudogu.com/official/base:3.15.8-1
 
 LABEL NAME="official/redis" \
-   VERSION="6.2.6-2" \
+   VERSION="6.2.12-1" \
    maintainer="info@cloudogu.com"
 
 # set environment variables

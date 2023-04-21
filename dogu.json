@@ -1,6 +1,6 @@
 {
   "Name": "official/redis",
-  "Version": "6.2.6-2",
+  "Version": "6.2.12-1",
   "DisplayName": "Redis",
   "Description": "Fast in-memory database",
   "Category": "Development Apps",
