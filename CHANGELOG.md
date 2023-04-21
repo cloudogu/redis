@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v6.2.12-1] - 2023-04-21
+### Changed
+- Upgrade base image to 3.15.8-1 (#6)
+- Upgrade redis to 6.2.12-r0 (#6)
+
 ## [v6.2.6-2] - 2022-04-11
 ### Changed
 - Upgrade base image to 3.15.3-1
