@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- [#8] Upgrade base image to 3.20.1-1
+- [#8] Upgrade base image to 3.20.1-2
 - [#8] Upgrade redis to 7.2.5-r0
 
 ### Removed
