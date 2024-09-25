@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v6.2.14-4] - 2024-09-25
+### Fixed
+- Add local config volume to fix issue #16
+
+### Changed
+- Upgrade Makefiles to 9.2.1
+
 ## [v6.2.14-3] - 2024-09-18
 ### Changed
 - Relicense to AGPL-3.0-only
