@@ -1,4 +1,4 @@
-FROM registry.cloudogu.com/official/base:3.15.11-2
+FROM registry.cloudogu.com/official/base:3.20.3-3
 
 LABEL NAME="official/redis" \
    VERSION="6.2.14-4" \
