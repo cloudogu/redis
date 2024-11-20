@@ -9,7 +9,7 @@ ENV SERVICE_TAGS=webapp \
     CONF_DIR=/usr/local/etc/redis \
     USER=redis \
     USER_ID=1000 \
-    REDIS_VERSION="6.2.14-r0" \
+    REDIS_VERSION="6.2.16-r0" \
     STARTUP_DIR=/
 
 RUN set -o errexit \
