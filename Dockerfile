@@ -8,7 +8,7 @@ LABEL NAME="official/redis" \
    maintainer="info@cloudogu.com"
 
 USER root
-RUN apt-get -y update && apt-get -y dist-upgrade && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#RUN apt-get -y update && apt-get -y dist-upgrade && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Copy the `doguctl` binary from the base image
 COPY --from=doguctlBinary /usr/bin/doguctl /usr/bin/
