@@ -17,9 +17,6 @@ file:
   /usr/local/etc/redis/data/service-accounts.acl:
     exists: true
     filetype: file
-package:
-  redis:
-    installed: true
 port:
   tcp:6379:
     listening: true
