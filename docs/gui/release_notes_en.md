@@ -4,8 +4,7 @@ Below you will find the release notes for the Sonatype Nexus Dogu.
 
 Technical details on a release can be found in the corresponding Changelog.
 
-
-## Release 6.2.17-1
+## [Unreleased]
 
 ### Redis 6.2.17 (January 6, 2025)
 - **Security Fixes**
