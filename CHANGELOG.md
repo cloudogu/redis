@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v6.2.17-1] - 2025-01-24
+### Changed 
+- [#21] Update redis to 6.2.17
+- [#21] Update golang to 1.21.12 to fix CVE-2023-24538, CVE-2023-24540, CVE-2024-24790
+- [#21] Update Base to 3.15.11-4
+- [#21] Update ces-build-lib to 4.0.1
+- [#21] Update dogu-build-lib to v3.0.0
+- [#19] Update Makefiles to 9.5.3
+- [#23] Add PreRelease-Build-Step
+
 ## [v6.2.14-4] - 2024-09-25
 ### Fixed
 - Add local config volume to fix issue #16

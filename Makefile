@@ -1,6 +1,6 @@
 ARTIFACT_ID=redis
 
-MAKEFILES_VERSION=9.2.1
+MAKEFILES_VERSION=9.5.3
 
 WORKSPACE=/workspace
 ASSETS_BUILD_DIRECTORY=assets
@@ -21,6 +21,7 @@ BATS_TAG?=1.2.1
 include build/make/variables.mk
 include build/make/self-update.mk
 include build/make/release.mk
+include build/make/prerelease.mk
 include build/make/k8s-dogu.mk
 
 .PHONY unit-test-shell:
