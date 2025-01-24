@@ -5,6 +5,9 @@ Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+
+## [v6.2.17-1] - 2025-01-24
+
 ### Redis 6.2.17 (6. Januar 2025)
 - **Sicherheitsfixes**
   - **CVE-2024-46981**: Behebte ein Problem, bei dem Lua-Skriptbefehle zu einer Remote-Code-Ausführung führen konnten.

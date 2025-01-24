@@ -6,6 +6,8 @@ Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
 
+## [v6.2.17-1] - 2025-01-24
+
 ### Redis 6.2.17 (January 6, 2025)
 - **Security Fixes**
   - **CVE-2024-46981**: Fixed an issue where Lua script commands could lead to remote code execution.
