@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v6.2.17-1] - 2025-01-24
 ### Changed 
 - [#21] Update redis to 6.2.17
 - [#21] Update golang to 1.21.12 to fix CVE-2023-24538, CVE-2023-24540, CVE-2024-24790
