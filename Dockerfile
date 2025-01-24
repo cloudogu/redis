@@ -1,31 +1,50 @@
-FROM registry.cloudogu.com/official/base:3.15.11-2
+# Stage 1: Base image to copy the doguctl binary
+FROM registry.cloudogu.com/official/base:3.15.11-4 AS doguctlbinary
 
+# Stage 2: Build gosu from source because of CVEs
+# stdlib  │ CVE-2023-24538 │ CRITICAL │ fixed  │ v1.18.2           │ 1.19.8, 1.20.3  │ golang: html/template: backticks not treated as string     │
+#         | CVE-2023-24540 │          │        │                   │ 1.19.9, 1.20.4  │ Not all valid JavaScript whitespace characters are         │
+#         │ CVE-2024-24790 │          │        │                   │ 1.21.11, 1.22.4 │ golang: net/netip: Unexpected behavior from Is methods for │
+FROM golang:1.21.12 AS gosu-builder
+
+WORKDIR /gosu-src
+
+# Clone the `gosu` source code and build it
+RUN apt-get update && apt-get install -y git \
+    && git clone https://github.com/tianon/gosu.git . \
+    && git checkout 1.17 \
+    && go build -o /usr/local/bin/gosu . \
+    && chmod +x /usr/local/bin/gosu
+
+# Stage 3: Final Redis image
+FROM redis:6.2.17
 LABEL NAME="official/redis" \
    VERSION="6.2.14-4" \
    maintainer="info@cloudogu.com"
 
-# set environment variables
+USER root
+
+# Copy the `gosu` binary built with the latest Go version
+COPY --from=gosu-builder /usr/local/bin/gosu /usr/local/bin/gosu
+
+# Copy the `doguctl` binary from the base image
+COPY --from=doguctlbinary /usr/bin/doguctl /usr/bin/
+
+# Set environment variables
 ENV SERVICE_TAGS=webapp \
     CONF_DIR=/usr/local/etc/redis \
     USER=redis \
     USER_ID=1000 \
-    REDIS_VERSION="6.2.14-r0" \
     STARTUP_DIR=/
 
-RUN set -o errexit \
- && set -o nounset \
- && set -o pipefail \
- && apk update \
- && apk upgrade \
- && apk add redis="${REDIS_VERSION}" bash
-
-# copy resources files
+# Copy additional resource files (if any)
 COPY resources/ /
 
-# expose application port
+# Expose Redis port
 EXPOSE 6379
 
+# Healthcheck using `doguctl`
 HEALTHCHECK CMD doguctl healthy redis || exit 1
 
-# start
+# Start Redis
 CMD ["/startup.sh"]

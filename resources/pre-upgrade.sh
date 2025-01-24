@@ -18,5 +18,9 @@ function run_preupgrade() {
 
 # make the script only run when executed, not when sourced from bats tests
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+until redis-cli ping; do
+  echo "Waiting for Redis to start..."
+  sleep 3
+done
   run_preupgrade "$@"
 fi
