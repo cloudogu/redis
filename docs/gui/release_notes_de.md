@@ -6,6 +6,9 @@ Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
 
+## [v6.2.17-2] - 2025-02-12
+Wir haben nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.
+
 ## [v6.2.17-1] - 2025-01-24
 
 ### Redis 6.2.17 (6. Januar 2025)
