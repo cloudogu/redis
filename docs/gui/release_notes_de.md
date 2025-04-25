@@ -5,6 +5,8 @@ Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+### Changed
+- Die Verwendung von Speicher und CPU wurden für die Kubernetes-Multinode-Umgebung optimiert.
 
 ## [v6.2.17-2] - 2025-02-12
 Wir haben nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.
