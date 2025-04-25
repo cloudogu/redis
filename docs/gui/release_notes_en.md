@@ -6,6 +6,10 @@ Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
 
+## [v6.2.17-3] - 2025-04-25
+### Changed
+- Usage of memory and CPU was optimized for the Kubernetes Mutlinode environment.
+
 ## [v6.2.17-2] - 2025-02-12
 We have only made technical changes. You can find more details in the changelogs.
 

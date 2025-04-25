@@ -6,6 +6,10 @@ Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
 
+## [v6.2.17-3] - 2025-04-25
+### Changed
+- Die Verwendung von Speicher und CPU wurden für die Kubernetes-Multinode-Umgebung optimiert.
+
 ## [v6.2.17-2] - 2025-02-12
 Wir haben nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.
 

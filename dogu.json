@@ -1,6 +1,6 @@
 {
   "Name": "official/redis",
-  "Version": "6.2.17-2",
+  "Version": "6.2.17-3",
   "DisplayName": "Redis",
   "Description": "Fast in-memory database",
   "Category": "Development Apps",
@@ -60,7 +60,8 @@
       "Optional": true,
       "Validation": {
         "Type": "BINARY_MEASUREMENT"
-      }
+      },
+      "Default": "101m"
     },
     {
       "Name": "container_config/memory_request",
@@ -68,7 +69,8 @@
       "Optional": true,
       "Validation": {
         "Type": "BINARY_MEASUREMENT"
-      }
+      },
+      "Default": "101m"
     },
     {
       "Name": "container_config/swap_limit",
@@ -86,7 +88,8 @@
     {
       "Name": "container_config/cpu_core_request",
       "Description": "Requests the container's minimal CPU core requirement. Use a positive floating value describing a fraction of 1 CPU core. When you define a value of '0.5', you are requesting half as much CPU time compared to if you asked for '1.0' CPU. This configuration is only applicable to the Multinode-EcoSystem.",
-      "Optional": true
+      "Optional": true,
+      "Default": "0.025"
     },
     {
       "Name": "container_config/storage_limit",
