@@ -5,6 +5,8 @@ Below you will find the release notes for the Sonatype Nexus Dogu.
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+### Changed
+- Usage of memory and CPU was optimized for the Kubernetes Mutlinode environment.
 
 ## [v6.2.17-2] - 2025-02-12
 We have only made technical changes. You can find more details in the changelogs.
