@@ -5,6 +5,8 @@ Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+
+## [v6.2.19-1] - 2025-07-08
 ### Changed 
 - Redis ist nun in der Version v6.2.19 verfügbar [Release-Notes](https://github.com/redis/redis/releases/tag/6.2.19)
 
