@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v6.2.19-1] - 2025-07-08
+### Changed 
+- [#29] Update redis to 6.2.19
+- [#29] Implemented pipe-build-lib
+- [#29] Upgraded golang to 1.22.4
+
 ## [v6.2.17-3] - 2025-04-25
 ### Changed
 - [#27] Set sensible resource requests and limits
