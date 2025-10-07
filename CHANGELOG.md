@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed 
+- [#31] Update redis to 6.2.20
+### Security
+- [#31] CVE Fixes:
+* [CVE-2025-49844](https://nvd.nist.gov/vuln/detail/CVE-2025-49844) - A Lua script may lead to remote code execution  
+* [CVE-2025-46817](https://nvd.nist.gov/vuln/detail/CVE-2025-46817) - A Lua script may lead to integer overflow and potential RCE  
+* [CVE-2025-46818](https://www.wiz.io/vulnerability-database/cve/cve-2025-46818) - A Lua script can be executed in the context of another user  
+* [CVE-2025-46819](https://nvd.nist.gov/vuln/detail/CVE-2025-46819) - LUA out-of-bound read  
 
 ## [v6.2.19-1] - 2025-07-08
 ### Changed 

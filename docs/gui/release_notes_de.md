@@ -5,6 +5,14 @@ Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+### Changed 
+- Redis ist nun in der Version v6.2.20 verfügbar [Release-Notes](https://github.com/redis/redis/releases/tag/6.2.20)
+### Sicherheit
+- Behebung folgender CVEs:
+* [CVE-2025-49844](https://nvd.nist.gov/vuln/detail/CVE-2025-49844) - Ein Lua-Skript kann zur Remote-Code-Ausführung führen  
+* [CVE-2025-46817](https://nvd.nist.gov/vuln/detail/CVE-2025-46817) - Ein Lua-Skript kann zu einem Integer Overflow und potenzieller Remote-Code-Ausführung führen  
+* [CVE-2025-46818](https://www.wiz.io/vulnerability-database/cve/cve-2025-46818) - Ein Lua-Skript kann im Kontext eines anderen Benutzers ausgeführt werden  
+* [CVE-2025-46819](https://nvd.nist.gov/vuln/detail/CVE-2025-46819) - Lua Out-of-Bounds-Read  
 
 ## [v6.2.19-1] - 2025-07-08
 ### Changed 
