@@ -6,7 +6,19 @@ Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
 
+## [v6.2.20-1] - 2025-10-07
+### Changed 
+- Redis has been updated to version v6.2.20 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.20)
+### Security
+- CVE Fixes:
+* [CVE-2025-49844](https://nvd.nist.gov/vuln/detail/CVE-2025-49844) – A Lua script may lead to remote code execution  
+* [CVE-2025-46817](https://nvd.nist.gov/vuln/detail/CVE-2025-46817) – A Lua script may lead to integer overflow and potential RCE  
+* [CVE-2025-46818](https://www.wiz.io/vulnerability-database/cve/cve-2025-46818) – A Lua script can be executed in the context of another user  
+* [CVE-2025-46819](https://nvd.nist.gov/vuln/detail/CVE-2025-46819) – Lua out-of-bound read  
+
 ## [v6.2.19-1] - 2025-07-08
+### Changed 
+- Redis has been updated to version v6.2.19 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.19)
 
 ## [v6.2.17-3] - 2025-04-25
 ### Changed
