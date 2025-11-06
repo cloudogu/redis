@@ -6,6 +6,11 @@ Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
 
+## [v6.2.21-1] - 2025-11-06
+### Changed 
+- Redis has been updated to version v6.2.21 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.21)
+### Security
+
 ## [v6.2.20-1] - 2025-10-07
 ### Changed 
 - Redis has been updated to version v6.2.20 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.20)
