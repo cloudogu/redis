@@ -40,6 +40,7 @@ ENV SERVICE_TAGS=webapp \
 # Copy additional resource files (if any)
 COPY resources/ /
 
+# needed for MN integration tests
 RUN apt update && apt install wget -y
 
 # Expose Redis port
