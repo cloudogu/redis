@@ -5,6 +5,9 @@ Below you will find the release notes for the Sonatype Nexus Dogu.
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+### Changed 
+- Redis has been updated to version v6.2.21 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.21)
+### Security
 
 ## [v6.2.20-1] - 2025-10-07
 ### Changed 

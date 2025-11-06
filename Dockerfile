@@ -17,9 +17,9 @@ RUN apt-get update && apt-get install -y git \
     && chmod +x /usr/local/bin/gosu
 
 # Stage 3: Final Redis image
-FROM redis:6.2.20
+FROM redis:6.2.21
 LABEL NAME="official/redis" \
-   VERSION="6.2.20-1" \
+   VERSION="6.2.21-0" \
    maintainer="info@cloudogu.com"
 
 USER root
@@ -39,6 +39,8 @@ ENV SERVICE_TAGS=webapp \
 
 # Copy additional resource files (if any)
 COPY resources/ /
+
+RUN apt update && apt install wget -y
 
 # Expose Redis port
 EXPOSE 6379
