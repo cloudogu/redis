@@ -1,10 +1,17 @@
-# Easyredmine Changelog
+# Redis Changelog
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v6.2.21-2] - 2026-01-29
+### Changed
+- [#35] Update Makefiles to v10.5.0
+- [#35] Update build-time stage images
+### Security
+- [#35] Fixes [CVE-2026-0861](https://avd.aquasec.com/nvd/2026/cve-2026-0861)
 
 ## [v6.2.21-1] - 2025-11-06
 ### Changed 

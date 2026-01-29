@@ -6,6 +6,12 @@ Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
 
+## [v6.2.21-2] - 2026-01-29
+### Sicherheit
+- [CVE-2026-0861](https://avd.aquasec.com/nvd/2026/cve-2026-0861) geschlossen.
+### Changed
+- Desweiteren wurden nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.
+
 ## [v6.2.21-1] - 2025-11-06
 ### Changed 
 - Redis ist nun in der Version v6.2.21 verfügbar [Release-Notes](https://github.com/redis/redis/releases/tag/6.2.21)
