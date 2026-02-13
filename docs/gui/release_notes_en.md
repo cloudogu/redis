@@ -6,6 +6,10 @@ Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
 
+## [v6.2.21-3] - 2026-02-13
+### Security
+- Fix CVE-2025-68121
+
 ## [v6.2.21-2] - 2026-01-29
 ### Security
 - [CVE-2026-0861](https://avd.aquasec.com/nvd/2026/cve-2026-0861) closed.
