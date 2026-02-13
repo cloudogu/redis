@@ -5,6 +5,8 @@ Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+
+## [v6.2.21-3] - 2026-02-13
 ### Security
 - Sicherheitslücke geschlossen CVE-2025-68121
 

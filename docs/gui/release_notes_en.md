@@ -5,6 +5,8 @@ Below you will find the release notes for the Sonatype Nexus Dogu.
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+
+## [v6.2.21-3] - 2026-02-13
 ### Security
 - Fix CVE-2025-68121
 
