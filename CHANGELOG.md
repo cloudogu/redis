@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- [#39] Upgrade base-image to 3.23.3-4
+    - This fixes a bug in doguctl, to not check the local config if volume is not mounted.
 
 ## [v6.2.21-3] - 2026-02-13
 ### Security
