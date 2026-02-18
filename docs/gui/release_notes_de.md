@@ -6,6 +6,9 @@ Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
 
+## [v6.2.21-4] - 2026-02-18
+- Wir haben nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.
+
 ## [v6.2.21-3] - 2026-02-13
 ### Security
 - Sicherheitslücke geschlossen CVE-2025-68121
