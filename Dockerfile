@@ -2,9 +2,6 @@
 FROM registry.cloudogu.com/official/base:3.24.1-1 AS doguctlbinary
 
 # Stage 2: Build gosu from source because of CVEs
-# stdlib  │ CVE-2023-24538 │ CRITICAL │ fixed  │ v1.18.2           │ 1.19.8, 1.20.3  │ golang: html/template: backticks not treated as string     │
-#         | CVE-2023-24540 │          │        │                   │ 1.19.9, 1.20.4  │ Not all valid JavaScript whitespace characters are         │
-#         │ CVE-2024-24790 │          │        │                   │ 1.21.11, 1.22.4 │ golang: net/netip: Unexpected behavior from Is methods for │
 FROM golang:1.26.0 AS gosu-builder
 
 WORKDIR /gosu-src
@@ -19,7 +16,7 @@ RUN apt-get update && apt-get install -y git \
 # Stage 3: Final Redis image
 FROM redis:6.2.22
 LABEL NAME="official/redis" \
-   VERSION="6.2.21-4" \
+   VERSION="6.2.22-0" \
    maintainer="info@cloudogu.com"
 
 USER root
