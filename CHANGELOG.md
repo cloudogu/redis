@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#41] Update redis to v6.2.22
 ### Security
 - [#41] Fix [CVE-2026-31789](https://nvd.nist.gov/vuln/detail/CVE-2026-31789)
+- [#41] Stop advertising Redis as a web application
 
 ## [v6.2.21-4] - 2026-02-18
 ### Fixed
