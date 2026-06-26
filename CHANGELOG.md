@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v6.2.22-1] - 2026-06-26
+### Changed
+- [#41] Update base image to v3.24.1-1
+- [#41] Update redis to v6.2.22
+### Security
+- [#41] Fix [CVE-2026-31789](https://nvd.nist.gov/vuln/detail/CVE-2026-31789)
+- [#41] Stop advertising Redis as a web application
+
 ## [v6.2.21-4] - 2026-02-18
 ### Fixed
 - [#39] Upgrade base-image to 3.23.3-4
