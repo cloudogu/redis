@@ -28,8 +28,7 @@ COPY --from=gosu-builder /usr/local/bin/gosu /usr/local/bin/gosu
 COPY --from=doguctlbinary /usr/local/bin/doguctl /usr/local/bin/doguctl
 
 # Set environment variables
-ENV SERVICE_TAGS=webapp \
-    CONF_DIR=/usr/local/etc/redis \
+ENV CONF_DIR=/usr/local/etc/redis \
     USER=redis \
     USER_ID=1000 \
     STARTUP_DIR=/
