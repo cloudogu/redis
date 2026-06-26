@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y git \
 # Stage 3: Final Redis image
 FROM redis:6.2.22
 LABEL NAME="official/redis" \
-   VERSION="6.2.22-0" \
+   VERSION="6.2.22-1" \
    maintainer="info@cloudogu.com"
 
 USER root
