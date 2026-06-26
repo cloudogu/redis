@@ -5,6 +5,9 @@ Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+### Security
+- Sicherheitslücke [CVE-2026-31789](https://nvd.nist.gov/vuln/detail/CVE-2026-31789) geschlossen
+- Redis wird nicht mehr als Web-Anwendung veröffentlicht.
 
 ## [v6.2.21-4] - 2026-02-18
 - Wir haben nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.

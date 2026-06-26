@@ -10,7 +10,7 @@ Redis Dogu for the Cloudogu EcoSystem
 
 **Website:** https://redis.io
 
-**Dependencies:** nginx
+**Dependencies:** none
 
 ## Documentation
 The documentation can be found inside the [docs](./docs) directory
