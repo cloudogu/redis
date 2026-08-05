@@ -1,5 +1,5 @@
 # Stage 1: Base image to copy the doguctl binary
-FROM registry.cloudogu.com/official/base:3.24.1-1 AS doguctlbinary
+FROM registry.cloudogu.com/official/base:3.24.1-2 AS doguctlbinary
 
 # Stage 2: Build gosu from source because of CVEs
 FROM golang:1.26.0 AS gosu-builder
