@@ -6,6 +6,9 @@ Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
 
+## [v6.2.23-1] - 2026-08-05
+- We have only made technical changes. You can find more details in the changelogs.
+
 ## [v6.2.22-1] - 2026-06-26
 ### Security
 - Fix vulnerability [CVE-2026-31789](https://nvd.nist.gov/vuln/detail/CVE-2026-31789)
