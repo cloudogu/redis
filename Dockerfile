@@ -1,20 +1,20 @@
 # Stage 1: Base image to copy the doguctl binary
-FROM registry.cloudogu.com/official/base:3.24.1-1 AS doguctlbinary
+FROM registry.cloudogu.com/official/base:3.24.1-2 AS doguctlbinary
 
 # Stage 2: Build gosu from source because of CVEs
-FROM golang:1.26.0 AS gosu-builder
+FROM golang:1.26.5 AS gosu-builder
 
 WORKDIR /gosu-src
 
 # Clone the `gosu` source code and build it
 RUN apt-get update && apt-get install -y git \
     && git clone https://github.com/tianon/gosu.git . \
-    && git checkout 1.17 \
+    && git checkout 1.19 \
     && go build -o /usr/local/bin/gosu . \
     && chmod +x /usr/local/bin/gosu
 
 # Stage 3: Final Redis image
-FROM redis:6.2.22
+FROM redis:6.2.23
 LABEL NAME="official/redis" \
    VERSION="6.2.22-1" \
    maintainer="info@cloudogu.com"
