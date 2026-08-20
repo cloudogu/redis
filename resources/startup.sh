@@ -23,6 +23,7 @@ REDIS_LOGLEVEL="$(getDoguLogLevel)"
 export REDIS_LOGLEVEL
 
 render_default_user_config
+rotate_default_user_password
 render_configuration
 
 doguctl state "ready"

@@ -4,7 +4,7 @@ set -o nounset
 set -o pipefail
 
 SERVICE="${1:-}"
-if [ X"${SERVICE}" = X"" ]; then
+if [[ -z "${SERVICE}" ]]; then
     echo "usage remove-sa.sh servicename"
     exit 1
 fi

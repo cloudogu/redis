@@ -1,10 +1,12 @@
 # Release Notes
 
-Im Folgenden finden Sie die Release Notes für das Sonatype Nexus-Dogu. 
+Im Folgenden finden Sie die Release Notes für das Redis-Dogu. 
 
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+### Security
+- Das Passwort des Redis-Administrationsbenutzers wird einmalig durch ein sicherer erzeugtes ersetzt. Die Zugänge der anderen Dogus zu Redis bleiben unverändert; ein Eingreifen ist nicht erforderlich.
 
 ## [v6.2.23-1] - 2026-08-05
 - Wir haben nur technische Änderungen vorgenommen. Näheres finden Sie in den Changelogs.
