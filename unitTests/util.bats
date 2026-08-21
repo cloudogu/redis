@@ -169,3 +169,15 @@ EOF
   # only the marker was read, nothing was generated or written
   assert_equal "$(mock_get_call_num "${doguctl}")" "1"
 }
+
+@test "rotate_default_user_password() should do nothing if there is no acl file yet" {
+  source /workspace/resources/util.sh
+  mock_set_status "${doguctl}" 0
+  mock_set_output "${doguctl}" "false" 1
+
+  run rotate_default_user_password
+
+  assert_success
+  assert_file_not_exist "${CONF_DIR}/data/service-accounts.acl"
+  assert_equal "$(mock_get_call_num "${doguctl}")" "1"
+}
