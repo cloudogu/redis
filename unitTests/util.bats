@@ -100,7 +100,7 @@ teardown() {
 @test "rotate_default_user_password() should replace the freshly rendered default user line" {
   source /workspace/resources/util.sh
   local acl_file="${CONF_DIR}/data/service-accounts.acl"
-  echo "user default +@all ~* on >oldPlain" > "${acl_file}"
+  echo "user default +@all ~* on #aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111aaaa1111" > "${acl_file}"
   mock_set_status "${doguctl}" 0
   mock_set_output "${doguctl}" "false" 1
   mock_set_output "${doguctl}" "newSecret123" 2
@@ -108,7 +108,7 @@ teardown() {
   run rotate_default_user_password
 
   assert_success
-  assert_equal "$(cat "${acl_file}")" "user default +@all ~* on >newSecret123"
+  assert_equal "$(cat "${acl_file}")" "user default +@all ~* on #1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
 }
 
 @test "rotate_default_user_password() should keep service accounts, replace the hashed default user and write the marker last" {
@@ -137,9 +137,9 @@ EOF
   # the service account survives, the default user is replaced by the new password
   run cat "${acl_file}"
   assert_line "user sa-scm on #99aa ~* &* +@all"
-  assert_line "user default +@all ~* on >newSecret123"
+  assert_line "user default +@all ~* on #1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
   refute_line "user default on #ab12 ~* &* +@all"
-  # exactly 2 entries, deafault and sa-scm not 2x default
+  # exactly 2 entries, default and sa-scm not 2x default
   assert_equal "${#lines[@]}" "2"
   # no leftover temporary file, mode of the volume file is untouched
   assert_file_not_exist "${acl_file}.tmp"
@@ -180,4 +180,44 @@ EOF
   assert_success
   assert_file_not_exist "${CONF_DIR}/data/service-accounts.acl"
   assert_equal "$(mock_get_call_num "${doguctl}")" "1"
+}
+
+@test "password_hash() should hash without a trailing newline so redis accepts the plaintext password" {
+  source /workspace/resources/util.sh
+
+  run password_hash "newSecret123"
+
+  assert_success
+
+  assert_output "1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
+}
+
+@test "render_default_user_config() should hand the acl template a hash instead of the plaintext password" {
+  source /workspace/resources/util.sh
+  mock_set_status "${doguctl}" 0
+  mock_set_output "${doguctl}" "newSecret123" 1
+
+  render_default_user_config
+
+  assert_equal "${DEFAULT_ADMIN_PASSWORD_HASH}" "1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
+  # doguctl call sum
+  # #1 random   - generate password
+  # #2 config   - write password
+  # #3 template - render the acl file
+  # #4 config   - set rotated flag
+  assert_equal "$(mock_get_call_num "${doguctl}")" "4"
+  assert_equal "$(mock_get_call_args "${doguctl}" 2)" "config -e default_admin_password newSecret123"
+  assert_equal "$(mock_get_call_args "${doguctl}" 3)" "template /service-accounts.acl.tpl ${CONF_DIR}/data/service-accounts.acl"
+  assert_equal "$(mock_get_call_args "${doguctl}" 4)" "config default_admin_password_rotated true"
+}
+
+@test "render_default_user_config() should do nothing if the acl file already exists" {
+  source /workspace/resources/util.sh
+  echo "user default +@all ~* on #1234567890123456789012345678901234567890123456789012346578901234" > "${CONF_DIR}/data/service-accounts.acl"
+  mock_set_status "${doguctl}" 0
+
+  run render_default_user_config
+
+  assert_success
+  assert_equal "$(mock_get_call_num "${doguctl}")" "0"
 }
