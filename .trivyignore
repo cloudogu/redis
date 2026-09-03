@@ -8,7 +8,7 @@ CVE-2023-45853
 # In this Dogu, all args to wget are static and not modifiable by the user.
 CVE-2024-38428
 
-# perl-base CVEs in the upstream redis:6.2.23 (debian bookworm) base image.
+# perl-base CVEs in the upstream redis:6.2.24 (debian bookworm) base image.
 # Debian tracks these as "no-dsa" for bookworm: no fixed package will be
 # shipped via a point release. Perl is not invoked by this Dogu at runtime.
 CVE-2026-13221

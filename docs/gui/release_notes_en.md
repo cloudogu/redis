@@ -5,6 +5,8 @@ Below you will find the release notes for the Redis Dogu.
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+### Changed
+- Redis has been updated to version v6.2.24 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.24)
 ### Security
 - The password of the redis administration user is replaced once by a more securely generated one. The access of other dogus to redis stays unchanged; no action is required.
 
