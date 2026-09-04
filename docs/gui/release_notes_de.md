@@ -5,6 +5,8 @@ Im Folgenden finden Sie die Release Notes für das Redis-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+
+## [v6.2.24-1] - 2026-09-04
 ### Changed
 - Redis ist nun in der Version v6.2.24 verfügbar [Release-Notes](https://github.com/redis/redis/releases/tag/6.2.24)
 ### Security
