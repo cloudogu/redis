@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v6.2.24-1] - 2026-09-04
+### Changed
+- [#46] Update redis to v6.2.24
+### Security
+- [#46] Rotate `default_admin_password` once on every instance, replacing a value that was generated insecurely
+  - The rotation happens in `startup.sh` before the redis server starts, guarded by the new config key `default_admin_password_rotated`
+  - Only the `default` user's line in `data/service-accounts.acl` is rewritten; service accounts of other dogus are kept
+- [#46] Store the `default` user's password in `data/service-accounts.acl` as a SHA-256 hash instead of plaintext
+  - For the rotation as well as for fresh installations
+  - This way the volume no longer holds plaintext password
+
 ## [v6.2.23-1] - 2026-08-05
 ### Changed
 - [#44] Update base image to v3.24.1-2

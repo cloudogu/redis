@@ -1,10 +1,16 @@
 # Release Notes
 
-Below you will find the release notes for the Sonatype Nexus Dogu. 
+Below you will find the release notes for the Redis Dogu. 
 
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+
+## [v6.2.24-1] - 2026-09-04
+### Changed
+- Redis has been updated to version v6.2.24 [Release Notes](https://github.com/redis/redis/releases/tag/6.2.24)
+### Security
+- The password of the redis administration user is replaced once by a more securely generated one. The access of other dogus to redis stays unchanged; no action is required.
 
 ## [v6.2.23-1] - 2026-08-05
 - We have only made technical changes. You can find more details in the changelogs.
