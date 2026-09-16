@@ -5,6 +5,8 @@ Im Folgenden finden Sie die Release Notes für das Redis-Dogu.
 Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
+### Security
+- Sicherheitslücke [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/CVE-2026-56854) geschlossen
 
 ## [v6.2.24-1] - 2026-09-04
 ### Changed

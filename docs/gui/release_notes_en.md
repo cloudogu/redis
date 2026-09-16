@@ -5,6 +5,8 @@ Below you will find the release notes for the Redis Dogu.
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+### Security
+- Fix vulnerability [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/CVE-2026-56854)
 
 ## [v6.2.24-1] - 2026-09-04
 ### Changed

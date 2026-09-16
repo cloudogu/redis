@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- [#50] Update base image to v3.24.1-3
+- [#50] Bump golang to v1.26.6
+### Security
+- [#50] Fix [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/CVE-2026-56854)
 
 ## [v6.2.24-1] - 2026-09-04
 ### Changed
