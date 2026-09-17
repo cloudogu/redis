@@ -6,6 +6,10 @@ Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
 
+## [v6.2.24-2] - 2026-09-17
+### Security
+- Sicherheitslücke [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/CVE-2026-56854) geschlossen
+
 ## [v6.2.24-1] - 2026-09-04
 ### Changed
 - Redis ist nun in der Version v6.2.24 verfügbar [Release-Notes](https://github.com/redis/redis/releases/tag/6.2.24)
