@@ -2,7 +2,7 @@
 FROM registry.cloudogu.com/official/base:3.24.2-1 AS doguctlbinary
 
 # Stage 2: Build gosu from source because of CVEs
-FROM golang:1.26.6 AS gosu-builder
+FROM golang:1.27.1 AS gosu-builder
 
 WORKDIR /gosu-src
 
