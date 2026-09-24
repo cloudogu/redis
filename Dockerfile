@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y git \
     && chmod +x /usr/local/bin/gosu
 
 # Stage 3: Final Redis image
-FROM redis:6.2.24
+FROM redis:7.4.11
 LABEL NAME="official/redis" \
-   VERSION="6.2.24-2" \
+   VERSION="7.4.11-0" \
    maintainer="info@cloudogu.com"
 
 USER root
