@@ -108,7 +108,7 @@ teardown() {
   run rotate_default_user_password
 
   assert_success
-  assert_equal "$(cat "${acl_file}")" "user default +@all ~* on #1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
+  assert_equal "$(cat "${acl_file}")" "user default +@all ~* &* on #1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
 }
 
 @test "rotate_default_user_password() should keep service accounts, replace the hashed default user and write the marker last" {
@@ -137,7 +137,7 @@ EOF
   # the service account survives, the default user is replaced by the new password
   run cat "${acl_file}"
   assert_line "user sa-scm on #99aa ~* &* +@all"
-  assert_line "user default +@all ~* on #1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
+  assert_line "user default +@all ~* &* on #1307237e24b4e7adf8d4156318de83047ea679d676b4f6429813aa8d9e602435"
   refute_line "user default on #ab12 ~* &* +@all"
   # exactly 2 entries, default and sa-scm not 2x default
   assert_equal "${#lines[@]}" "2"
