@@ -35,7 +35,7 @@ function save_acl_with_channel_permissions() {
   local default_password reply
   default_password="$(doguctl config -e "default_admin_password")"
   # redis-cli exits 0 on error replies but 1 on a failed AUTH, so always check the reply itself
-  reply="$(redis-cli --no-auth-warning --user default --pass "${default_password}" acl save 2>&1)" || true
+  reply="$(REDISCLI_AUTH="${default_password}" redis-cli --user default acl save 2>&1)" || true
   if [[ "${reply}" != "OK" ]]; then
     echo "ERROR: ACL SAVE failed: ${reply}"
     exit 1

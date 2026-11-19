@@ -35,7 +35,8 @@ teardown() {
   assert_line "Redis pre-upgrade done"
   assert_equal "$(mock_get_call_args "${doguctl}" "1")" "config -e default_admin_password"
   assert_equal "$(mock_get_call_num "${redis_cli}")" "1"
-  assert_equal "$(mock_get_call_args "${redis_cli}" "1")" "--no-auth-warning --user default --pass s3cr3t acl save"
+  assert_equal "$(mock_get_call_args "${redis_cli}" "1")" "--user default acl save"
+  assert_equal "$(mock_get_call_env "${redis_cli}" "REDISCLI_AUTH" "1")" "s3cr3t"
 }
 
 @test "run_preupgrade() should fail if ACL SAVE does not answer OK" {
