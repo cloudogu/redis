@@ -4,7 +4,7 @@ FROM registry.cloudogu.com/official/base:3.24.4-1 AS doguctlbinary
 # Stage 2: Final Redis image
 FROM redis:8.10.3
 LABEL NAME="official/redis" \
-   VERSION="8.10.3-0" \
+   VERSION="8.10.3-1" \
    maintainer="info@cloudogu.com"
 
 USER root

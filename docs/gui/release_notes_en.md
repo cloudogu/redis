@@ -5,6 +5,8 @@ Below you will find the release notes for the Redis Dogu.
 Technical details on a release can be found in the corresponding Changelog.
 
 ## [Unreleased]
+
+## [v8.10.3-1] - 2026-11-19
 ### Changed
 - Redis has been updated to version v8.10.3 [Release Notes](https://github.com/redis/redis/releases/tag/8.10.3)
 - Existing Redis users, including the service accounts of other dogus, keep their access to Pub/Sub channels after the upgrade; no action is required.
