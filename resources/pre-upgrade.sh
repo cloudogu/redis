@@ -13,7 +13,33 @@ function run_preupgrade() {
     exit 0
   fi
 
+  if [[ "$(major_version "${FROM_VERSION}")" -lt 7 ]]; then
+    save_acl_with_channel_permissions
+  fi
+
   echo "Redis pre-upgrade done"
+}
+
+# Prints the major version of a dogu version, e.g. "6" for "6.2.24-2".
+function major_version() {
+  echo "${1%%.*}"
+}
+
+# Redis 7 changed the default of acl-pubsub-default from allchannels to resetchannels, so
+# every ACL user without an explicit channel rule loses all Pub/Sub access after the upgrade.
+# The ACL file on the volume is never re-rendered, so it may still hold such users. ACL SAVE
+# in the still running redis 6 writes the implicit "&*" of every user into the ACL file,
+# which the new redis then loads as it is.
+function save_acl_with_channel_permissions() {
+  echo "Saving ACL users with explicit Pub/Sub channel permissions..."
+  local default_password reply
+  default_password="$(doguctl config -e "default_admin_password")"
+  # redis-cli exits 0 on error replies but 1 on a failed AUTH, so always check the reply itself
+  reply="$(redis-cli --no-auth-warning --user default --pass "${default_password}" acl save 2>&1)" || true
+  if [[ "${reply}" != "OK" ]]; then
+    echo "ERROR: ACL SAVE failed: ${reply}"
+    exit 1
+  fi
 }
 
 # make the script only run when executed, not when sourced from bats tests
