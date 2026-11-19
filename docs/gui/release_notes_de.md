@@ -6,6 +6,12 @@ Technische Details zu einem Release finden Sie im zugehörigen Changelog.
 
 ## [Unreleased]
 
+## [v8.10.3-1] - 2026-11-19
+### Changed
+- Redis ist nun in der Version v8.10.3 verfügbar [Release-Notes](https://github.com/redis/redis/releases/tag/8.10.3)
+- Bestehende Redis-Benutzer, auch die Service-Accounts anderer Dogus, behalten nach dem Upgrade ihren Zugriff auf Pub/Sub-Kanäle; ein Eingreifen ist nicht erforderlich.
+- Redis 8 speichert seine Daten in einem Format, das ältere Redis-Versionen nicht lesen können. Ein Downgrade auf eine ältere Version dieses Dogus ist nach dem Upgrade daher nicht möglich.
+
 ## [v6.2.24-2] - 2026-09-17
 ### Security
 - Sicherheitslücke [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/CVE-2026-56854) geschlossen

@@ -83,7 +83,7 @@ function rotate_default_user_password() {
   # Drop the default user, then append it with the new password. Every other line is a
   # service account written by ACL SAVE and must survive
   acl_without_default_user "${acl_file}" > "${acl_file}.tmp"
-  echo "user default +@all ~* on #$(password_hash "${new_password}")" >> "${acl_file}.tmp"
+  echo "user default +@all ~* &* on #$(password_hash "${new_password}")" >> "${acl_file}.tmp"
   # Copy to ensure owner and mode of the original file are kept.
   cat "${acl_file}.tmp" > "${acl_file}"
   rm -f "${acl_file}.tmp"

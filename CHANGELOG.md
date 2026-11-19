@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v8.10.3-1] - 2026-11-19
+### Changed
+- [#52] Update redis to v8.10.3
+- [#52] Update base image to v3.24.4-1
+- [#52] Grant redis default user access to all Pub/Sub channels
+- [#52] Save ACL channel permissions before upgrading from redis 6
+  - Redis 7 and newer deny Pub/Sub to ACL users without an explicit channel rule
+  - `pre-upgrade.sh` runs `ACL SAVE` in the old redis 6 container, which writes `&*` for every user into `data/service-accounts.acl`
+
 ## [v6.2.24-2] - 2026-09-17
 ### Changed
 - [#50] Update base image to v3.24.1-3

@@ -11,6 +11,7 @@ def pipe = new com.cloudogu.sos.pipebuildlib.DoguPipe(this, [
     shellScripts       : ['''
                           resources/startup.sh
                           resources/util.sh
+                          resources/pre-upgrade.sh
                           '''
     ]
 ])
