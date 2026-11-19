@@ -31,6 +31,7 @@ function major_version() {
 # in the still running redis 6 writes the implicit "&*" of every user into the ACL file,
 # which the new redis then loads as it is.
 function save_acl_with_channel_permissions() {
+  wait_for_redis
   echo "Saving ACL users with explicit Pub/Sub channel permissions..."
   local default_password reply
   default_password="$(doguctl config -e "default_admin_password")"
@@ -42,11 +43,22 @@ function save_acl_with_channel_permissions() {
   fi
 }
 
+# Waits until redis accepts connections, but not forever.
+# redis-cli only exits non-zero if it cannot connect.
+function wait_for_redis() {
+  local max_tries=20 interval=3 try
+  for ((try = 1; try <= max_tries; try++)); do
+    if redis-cli ping >/dev/null 2>&1; then
+      return 0
+    fi
+    echo "Waiting for Redis to start... (${try}/${max_tries})"
+    sleep "${interval}"
+  done
+  echo "ERROR: Redis did not accept connections within $((max_tries * interval)) seconds"
+  exit 1
+}
+
 # make the script only run when executed, not when sourced from bats tests
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-until redis-cli ping; do
-  echo "Waiting for Redis to start..."
-  sleep 3
-done
   run_preupgrade "$@"
 fi
