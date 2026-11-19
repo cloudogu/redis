@@ -1,1 +1,1 @@
-user default +@all ~* on #{{ .Env.Get "DEFAULT_ADMIN_PASSWORD_HASH" }}
+user default +@all ~* &* on #{{ .Env.Get "DEFAULT_ADMIN_PASSWORD_HASH" }}
